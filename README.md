@@ -1,1 +1,1 @@
-# design-patter-with-java
+# design-pattern-with-java
