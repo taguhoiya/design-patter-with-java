@@ -8,9 +8,9 @@ interface TextFormattingStyle {
 
 // ConcreteFlyweight: Concrete text formatting style
 class ConcreteTextFormattingStyle implements TextFormattingStyle {
-    private String font;
-    private int size;
-    private String color;
+    private final String font;
+    private final int size;
+    private final String color;
 
     public ConcreteTextFormattingStyle(String font, int size, String color) {
         this.font = font;
@@ -27,7 +27,7 @@ class ConcreteTextFormattingStyle implements TextFormattingStyle {
 
 // FlyweightFactory: Manages creation and sharing of text formatting styles
 class TextFormattingStyleFactory {
-    private Map<String, TextFormattingStyle> styleMap = new HashMap<>();
+    private final Map<String, TextFormattingStyle> styleMap = new HashMap<>();
 
     public TextFormattingStyle getStyle(String font, int size, String color) {
         String key = font + size + color;
