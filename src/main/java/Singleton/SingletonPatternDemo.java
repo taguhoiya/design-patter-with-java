@@ -1,3 +1,5 @@
+package Singleton;
+
 class Singleton {
     private static Singleton instance;
 
@@ -16,6 +18,7 @@ class Singleton {
         System.out.println("Hello, I am the Singleton instance!");
     }
 }
+
 
 public class SingletonPatternDemo {
     public static void main(String[] args) {
