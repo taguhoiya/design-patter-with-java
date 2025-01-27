@@ -1,11 +1,26 @@
 package FlyWeight;
+
 import java.util.HashMap;
 import java.util.Map;
+
+// https:// medium.com/@maheshmaddi92/3-6-flyweight-efc16010d316
+// The Flyweight Design Pattern is a structural design pattern used to minimize memory usage and
+// improve performance by sharing as much data as possible between similar objects. Instead of
+// creating a large number of similar objects, the Flyweight pattern reuses existing objects to
+// reduce the overhead.
+
+// When to Use:
+// You have a large number of similar objects that consume a lot of memory.
+// The intrinsic and extrinsic states can be clearly separated.
+// Example scenarios: rendering objects in a game, managing reusable resources like threads,
+// or optimizing large datasets.
+
 
 // Flyweight: Interface for text formatting styles
 interface TextFormattingStyle {
     void apply(String text);
 }
+
 
 // ConcreteFlyweight: Concrete text formatting style
 class ConcreteTextFormattingStyle implements TextFormattingStyle {
@@ -21,10 +36,12 @@ class ConcreteTextFormattingStyle implements TextFormattingStyle {
 
     @Override
     public void apply(String text) {
-        System.out.println("Applying style - Font: " + font + ", Size: " + size + ", Color: " + color);
+        System.out.println(
+                "Applying style - Font: " + font + ", Size: " + size + ", Color: " + color);
         System.out.println(text);
     }
 }
+
 
 // FlyweightFactory: Manages creation and sharing of text formatting styles
 class TextFormattingStyleFactory {
@@ -38,6 +55,7 @@ class TextFormattingStyleFactory {
         return styleMap.get(key);
     }
 }
+
 
 // Client code
 public class FlyWeight {
